@@ -55,7 +55,7 @@ const Tarefa = ({
         onChange={(evento) => setDescricao(evento.target.value)} //isso é necessário para ativar o set descrição lá em cima
       />
       <S.BarraAcoes>
-        {estaEditando ? ( // A ? significa (ENTÃO)
+        {estaEditando ? ( // o ? significa (ENTÃO)
           <>
             <S.BotaoSalvar
               onClick={() => {
