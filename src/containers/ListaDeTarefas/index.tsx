@@ -2,7 +2,7 @@
 import { useSelector } from 'react-redux' //importção interna primeiro
 //depois importações externas
 import Tarefa from '../../components/FiltroCard/Tarefa'
-import { Container } from './styles'
+import { MainContainer, Titulo } from '../../styles'
 
 import { RootReducer } from '../../store'
 
@@ -38,18 +38,31 @@ const ListaDeTarefas = () => {
     }
   }
 
+  //criei uma ooutra função porque o código de exibição do site estava ficando muito extenço e quando fica grande é melhor colocar em uma função
+  const exibeResultadoFiltrage = (quantidade: number) => {
+    let mensagem = ''
+    const complementacao =
+      termo !== undefined && termo.length > 0 ? `e "${termo}"` : ''
+
+    if (criterio === 'todas') {
+      mensagem = `${quantidade} tarefa(s) encontrada(s) como: todas ${complementacao}`
+    } else {
+      mensagem = `${quantidade} tarefa(s) encontarda(s) como: "${`${criterio}=${valor}`}" ${complementacao}`
+    }
+
+    return mensagem
+  }
+
+  //aqui estou criando uma função para as tarefas, porque não é bm fazer direto no paragrafo por exemplo ou na div etc... sempre é bom fazer uma função
+  const tarefas = filtrarTarefas()
+  const mensagem = exibeResultadoFiltrage(tarefas.length)
+
   return (
-    <Container>
-      <p>
-        2 Tarefas marcaas como: &quot;categoria&ldquo; e &quot;{termo}&ldquo;
-      </p>
+    <MainContainer>
+      {/* as significa Como, esse P é para diser que é de uma tag P*/}
+      <Titulo as={'p'}>{mensagem}</Titulo>{' '}
       <ul>
-        <li>{termo}</li>
-        <li>{criterio}</li>
-        <li>{valor}</li>
-      </ul>
-      <ul>
-        {filtrarTarefas().map((t) => (
+        {tarefas.map((t) => (
           <li key={t.titulo}>
             <Tarefa
               id={t.id}
@@ -61,7 +74,7 @@ const ListaDeTarefas = () => {
           </li>
         ))}
       </ul>
-    </Container>
+    </MainContainer>
   )
 }
 

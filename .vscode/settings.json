@@ -12,6 +12,7 @@
       "Buscar",
       "caso",
       "categoria",
+      "complementacao",
       "componentes",
       "concluída",
       "concluidas",
@@ -23,6 +24,9 @@
       "distanciamento",
       "distânciamneto",
       "espaçamento",
+      "Estilo",
+      "Estudar",
+      "evento",
       "fatura",
       "fazendo",
       "Filtro",
@@ -36,7 +40,9 @@
       "lados",
       "legenda",
       "letra",
+      "Lista",
       "maiúscula",
+      "módulo",
       "nesse",
       "Pagar",
       "pelo",
@@ -44,6 +50,7 @@
       "pendentes",
       "primeira",
       "prioridade",
+      "revisão",
       "significa",
       "Tarefa",
       "tarefas",
@@ -52,6 +59,7 @@
       "todas",
       "urgente",
       "urgentes",
+      "variaveis",
       "vermelho"
     ]
   }

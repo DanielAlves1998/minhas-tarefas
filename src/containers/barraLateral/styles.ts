@@ -13,13 +13,3 @@ export const Filtros = styled.div`
   grid-gap: 8px; //dá um distanciamento em todos os lados da div, fazendo um distânciamneto em todas as barras
   margin-top: 16px;
 `
-
-export const Campo = styled.input`
-  padding: 8px;
-  background-color: #fff;
-  border-radius: 8px;
-  font-weight: bold;
-  color: #666666;
-  border-color: #666666;
-  width: 100%;
-`

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import variaveis from '../../../styles/variaveis'
 
 import * as enums from '../../../utils/enums/tarefa' // O (* as) significa importe tudo como enum esse cason
+import { Botao } from '../../../styles'
 
 type TagProps = {
   prioridade?: enums.Prioridade
@@ -30,12 +31,18 @@ export const Card = styled.div`
   padding: 16px; //é o espaçamento da div
   margin-bottom: 32px; //dá uma margem nesse caso para todo o card
   border-radius: 16px; //arredondamento da borda
+
+  label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
 `
 
 export const Titulo = styled.h3`
   font-size: 18px; //é o tamanho da fonte do h3 nesse caso
   font-weight: bold; //é o estilo da fonte
-  margin-bottom: 16px; //dá um espaçamento para baixo
+  margin-left: 8px;
 `
 
 export const Tag = styled.span<TagProps>`
@@ -69,22 +76,6 @@ export const Descricao = styled.textarea`
 export const BarraAcoes = styled.div`
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 16px;
-`
-
-export const Botao = styled.button`
-  font-weight: bold;
-  font-size: 12px;
-  color: #fff;
-  padding: 8px 12px; //espaçamento o 8px é de cima para baixo, e 12px é da direita para direita
-  border: none; //é para retirar a borda
-  cursor: pointer; //é para a setinha do cursor mudar
-  background-color: #2f3640; //cor do botão
-  border-radius: 8px; //arredonda as bordas
-  margin-right: 8px; //dá uma margem para a direita
-`
-
-export const BotaoSalvar = styled(Botao)`
-  background-color: ${variaveis.verde};
 `
 
 export const BotaoRemoverECancelar = styled(Botao)`
